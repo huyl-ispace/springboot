@@ -2,7 +2,7 @@ spring:
   application:
     name: registry-service
   config:
-    import: "optional:configserver:http://127.0.0.1:8888"
+    import: "optional:configserver:${CONFIG_DEFAULT_ZONE:http://127.0.0.1:8888}"
   cloud:
     config:
       username: user
