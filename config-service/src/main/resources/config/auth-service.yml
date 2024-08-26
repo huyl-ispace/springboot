@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /auth
+  port: 8081
+keycloak:
+  realm: realm_springboot
+  auth-server-url: http://localhost:9090
+  clientId: admin-cli
+  clientSecret: 5PO1sI7XYBzV89Wp6HqCGoCo5eBsikTr

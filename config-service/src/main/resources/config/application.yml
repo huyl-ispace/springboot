@@ -1,0 +1,22 @@
+eureka:
+  server:
+    renewal-threshold-update-interval-ms: 30000
+    eviction-interval-timer-in-ms: 60000
+    peer-node-read-timeout-ms: 10000
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone : http://127.0.0.1:8761/eureka/
+spring:
+  web:
+    resources:
+      add-mappings: false
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9090/realms/realm_springboot
+keycloak:
+  token:
+    url: http://localhost:9090/realms/realm_springboot/protocol/openid-connect/token

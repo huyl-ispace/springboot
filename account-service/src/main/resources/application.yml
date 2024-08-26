@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: account-service
+  config:
+    import: "optional:configserver:http://127.0.0.1:8888"
+  cloud:
+    config:
+      username: user
+      password: Config@123
