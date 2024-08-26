@@ -33,7 +33,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - EUREKA_DEFAULT_ZONE=http://registry-service:8761/eureka/
-      - CONFIG_DEFAULT_ZONE=http://config-service:8888
+      - CONFIG_SERVER_URL=http://config-service:8888
     ports:
       - "8761:8761"
     healthcheck:
@@ -56,7 +56,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - EUREKA_DEFAULT_ZONE=http://registry-service:8761/eureka/
-      - CONFIG_DEFAULT_ZONE=http://config-service:8888
+      - CONFIG_SERVER_URL=http://config-service:8888
     ports:
       - "8080:8080"
     networks:
@@ -75,7 +75,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - EUREKA_DEFAULT_ZONE=http://registry-service:8761/eureka/
-      - CONFIG_DEFAULT_ZONE=http://config-service:8888
+      - CONFIG_SERVER_URL=http://config-service:8888
     ports:
       - "8081:8081"
     networks:
@@ -94,7 +94,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - EUREKA_DEFAULT_ZONE=http://registry-service:8761/eureka/
-      - CONFIG_DEFAULT_ZONE=http://config-service:8888
+      - CONFIG_SERVER_URL=http://config-service:8888
     ports:
       - "8082:8082"
     networks:
