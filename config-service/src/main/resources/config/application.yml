@@ -16,7 +16,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9090/realms/realm_springboot
+          issuer-uri: ${KEYCLOAK_URL:http://localhost:9090/realms/realm_springboot}
 keycloak:
   token:
-    url: http://localhost:9090/realms/realm_springboot/protocol/openid-connect/token
+    url: ${KEYCLOAK_URL:http://localhost:9090/realms/realm_springboot}/protocol/openid-connect/token
