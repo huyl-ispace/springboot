@@ -1,8 +1,6 @@
-version: "3.8"
-
 networks:
-  backend-app-network:
-    driver: bridge
+  app-network:
+    external: true
 
 services:
   config-service:
@@ -24,7 +22,7 @@ services:
       retries: 3
       start_period: 20s
     networks:
-      - backend-app-network
+      - app-network
   registry-service:
     container_name: registry-service
     image: registry_service:latest
@@ -45,7 +43,7 @@ services:
       retries: 3
       start_period: 20s
     networks:
-      - backend-app-network
+      - app-network
     depends_on:
       config-service:
         condition: service_healthy
@@ -63,7 +61,7 @@ services:
     ports:
       - "8080:8080"
     networks:
-      - backend-app-network
+      - app-network
     depends_on:
       config-service:
         condition: service_healthy
@@ -83,7 +81,7 @@ services:
     ports:
       - "8081:8081"
     networks:
-      - backend-app-network
+      - app-network
     depends_on:
       config-service:
         condition: service_healthy
@@ -103,7 +101,7 @@ services:
     ports:
       - "8082:8082"
     networks:
-      - backend-app-network
+      - app-network
     depends_on:
       config-service:
         condition: service_healthy
