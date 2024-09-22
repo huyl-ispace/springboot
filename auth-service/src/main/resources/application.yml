@@ -7,3 +7,20 @@ spring:
     config:
       username: user
       password: Config@123
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring-auth
+    username: postgres
+    password: 123456
+  security:
+    oauth2:
+      client:
+        registration:
+          auth-server:
+            authorizationGrantType: client_credentials
+            clientId: account-service
+            clientSecret: 1234A@a
+            scope:
+              - client
+        provider:
+          auth-server:
+            tokenUri: http://127.0.0.1:8081/auth/oauth2/token

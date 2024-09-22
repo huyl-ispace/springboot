@@ -78,6 +78,7 @@ services:
       - EUREKA_DEFAULT_ZONE=http://registry-service:8761/eureka/
       - CONFIG_SERVER_URL=http://config-service:8888
       - KEYCLOAK_URL=http://huylol23.uksouth.cloudapp.azure.com/keycloak/realms/realm_springboot
+      - JWK_URL=http://auth-service:8081
     ports:
       - "8081:8081"
     networks:
@@ -98,6 +99,7 @@ services:
       - EUREKA_DEFAULT_ZONE=http://registry-service:8761/eureka/
       - CONFIG_SERVER_URL=http://config-service:8888
       - KEYCLOAK_URL=http://huylol23.uksouth.cloudapp.azure.com/keycloak/realms/realm_springboot
+      - JWK_URL=http://auth-service:8081
     ports:
       - "8082:8082"
     networks:

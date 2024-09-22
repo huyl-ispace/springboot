@@ -36,6 +36,13 @@ public class JwtAuthConverter implements Converter<Jwt, Collection<GrantedAuthor
                 );
             });
         }
+        Collection<String> scopes = jwt.getClaim("scope");
+        if (scopes != null && !scopes.isEmpty()) {
+            Collection<GrantedAuthority> realmRoles = scopes.stream()
+                    .map(role -> new SimpleGrantedAuthority("SCOPE_" + role))
+                    .collect(Collectors.toList());
+            grantedAuthorities.addAll(realmRoles);
+        }
         return grantedAuthorities;
     }
 }
